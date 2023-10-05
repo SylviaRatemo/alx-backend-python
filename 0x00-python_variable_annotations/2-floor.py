@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 '''Task 2
 '''
-import math
 
 
-def floor(n: float) -> float:
+def floor(n: float) -> int:
     '''Floor
     '''
-    return math.floor(n)
+    return int(n)
