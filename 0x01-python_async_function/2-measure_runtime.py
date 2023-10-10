@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
-'''Task 0
+'''Task 2
 '''
-import random
+import time
 import asyncio
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-async def wait_random(max_delay: int = 1) -> float:
-    '''Task 0
+async def measure_time(n: int, max_delay: int) -> float:
+    '''Task 2
     '''
-    delay = random.uniform(0, max_delay)
-    await asyncio.sleep(delay)
-    return delay
+    s = time.perf_counter()
+    asyncio.run(wait_n(n, max_delay))
+    elapsed = time.perf_counter() - s
+    return elapsed / n
